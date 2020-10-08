@@ -69,25 +69,23 @@ public class MyLinkedList<K> {
 	}
 
 	public INode<K> searchNode(K key) {
-		if(this.head != null)
-		{
-		INode<K> tempNode = this.head;
-		while (tempNode!= null) {
-			if (tempNode.getKey().equals(key))
-			{
-				return tempNode;
+		if (this.head != null) {
+			INode<K> tempNode = this.head;
+			while (tempNode != null) {
+				if (tempNode.getKey().equals(key)) {
+					return tempNode;
+				}
+				tempNode = tempNode.getNext();
 			}
-			tempNode = tempNode.getNext();
 		}
-		}
-		
+
 		return null;
 	}
 
 	public INode<K> deleteSpecificNode(INode<K> seachedNode) {
 		INode<K> tempNode = this.head;
 		INode<K> lastButOneNode = tempNode;
-		while (!((int) tempNode.getKey() == 40)) {
+		while (!(tempNode.getKey() == seachedNode.getKey())) {
 			lastButOneNode = tempNode;
 			tempNode = tempNode.getNext();
 		}
@@ -123,5 +121,5 @@ public class MyLinkedList<K> {
 		nodes = nodes + tempNode.getKey();
 		System.out.println("Linked List : " + nodes);
 	}
-	
+
 }
