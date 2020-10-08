@@ -72,7 +72,7 @@ public class MyLinkedList<K> {
 		if(this.head != null)
 		{
 		INode<K> tempNode = this.head;
-		while (tempNode.getNext() != null) {
+		while (tempNode!= null) {
 			if (tempNode.getKey().equals(key))
 			{
 				return tempNode;
